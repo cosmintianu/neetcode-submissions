@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Store the nums[idx] and their idx
+        hmap = defaultdict()
+
+        for idx, num in enumerate(nums):
+            complement = target - num
+
+            if complement in hmap:
+                return sorted([idx, hmap[complement]])
+
+            hmap[num] = idx
+
+
